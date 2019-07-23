@@ -12,6 +12,8 @@ const PORT = 5000;
 // PARSING
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+var flash = require('connect-flash');
+
 
 // PASSPORT
 app.use(session({
@@ -21,6 +23,7 @@ app.use(session({
 })); //used for hashing
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 //For Handlebars
 app.set("views", "./app/views")
@@ -48,6 +51,7 @@ models.sequelize.sync().then(function () {
 }).catch(function (err) {
     console.log(err)
 });
+
 
 // LISTEN
 app.listen(PORT, function (err) {

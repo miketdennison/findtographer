@@ -86,7 +86,6 @@ module.exports = function (passport, user) {
                     });
                 }
                 if (!isValidPassword(user.password, password)) {
-
                     return done(null, false, {
                         message: "Incorrect password."
                     });
