@@ -7,6 +7,7 @@ const passport = require("passport");
 const session = require("express-session");
 const env = require("dotenv").config();
 const exphbs = require("express-handlebars");
+const PORT = 5000;
 
 // PARSING
 app.use(express.urlencoded({ extended: true }));
@@ -29,9 +30,7 @@ app.engine("hbs", exphbs({
 app.set("view engine", ".hbs");
 
 app.get("/", function (req, res) {
-
     res.send("Welcome to Passport with Sequelize");
-
 });
 
 // MODELS
@@ -45,13 +44,13 @@ require("./app/config/passport/passport.js")(passport, models.user);
 
 // MYSQL SYNC DB
 models.sequelize.sync().then(function () { 
-    console.log("Nice! Database looks fine")
+    console.log("User Authentication Database Synced.")
 }).catch(function (err) {
-    console.log(err, "Something went wrong with the Database Update!")
+    console.log(err)
 });
 
 // LISTEN
-app.listen(5000, function (err) {
-    if (!err) console.log("Site is live");
+app.listen(PORT, function (err) {
+    if (!err) console.log(`Listening on Port ${PORT}`);
     else console.log(err);
 });
