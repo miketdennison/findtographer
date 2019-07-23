@@ -1,47 +1,57 @@
-require("dotenv").config();
-var express = require("express");
-var exphbs = require("express-handlebars");
+// DEPENDENCIES
+// Express
+const express = require("express");
+const app = express();
+// Handles authentication
+const passport = require("passport");
+const session = require("express-session");
+const env = require("dotenv").config();
+const exphbs = require("express-handlebars");
 
-var db = require("./models");
-
-var app = express();
-var PORT = process.env.PORT || 3000;
-
-// Middleware
-app.use(express.urlencoded({ extended: false }));
+// PARSING
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
 
-// Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
+// PASSPORT
+app.use(session({
+    secret: "keyboard cat",
+    resave: true,
+    saveUninitialized: true
+})); //used for hashing
+app.use(passport.initialize());
+app.use(passport.session());
 
-// Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+//For Handlebars
+app.set("views", "./app/views")
+app.engine("hbs", exphbs({
+    extname: ".hbs"
+}));
+app.set("view engine", ".hbs");
 
-var syncOptions = { force: false };
+app.get("/", function (req, res) {
 
-// If running a test, set syncOptions.force to true
-// clearing the `testdb`
-if (process.env.NODE_ENV === "test") {
-  syncOptions.force = true;
-}
+    res.send("Welcome to Passport with Sequelize");
 
-// Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
-  });
 });
 
-module.exports = app;
+// MODELS
+const models = require("./app/models");
+
+// ROUTES
+const authRoute = require("./app/routes/auth.js")(app, passport);
+
+// PASSPORT
+require("./app/config/passport/passport.js")(passport, models.user);
+
+// MYSQL SYNC DB
+models.sequelize.sync().then(function () { 
+    console.log("Nice! Database looks fine")
+}).catch(function (err) {
+    console.log(err, "Something went wrong with the Database Update!")
+});
+
+// LISTEN
+app.listen(5000, function (err) {
+    if (!err) console.log("Site is live");
+    else console.log(err);
+});
