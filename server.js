@@ -9,6 +9,7 @@ const env = require("dotenv").config();
 const exphbs = require("express-handlebars");
 const PORT = 5000;
 
+app.use(express.static('app/public'))
 // PARSING
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
