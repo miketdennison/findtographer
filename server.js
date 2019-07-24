@@ -10,6 +10,7 @@ const app = express();
 // PORT
 const PORT = 5000;
 
+app.use(express.static('app/public'))
 // PARSING
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -32,6 +33,13 @@ app.engine("hbs", exphbs({
 }));
 app.set("view engine", ".hbs");
 
+<<<<<<< HEAD
+=======
+app.get("/", function (req, res) {
+    res.render("index");
+});
+
+>>>>>>> 1ebe717c195875faa1ec9a17c5a5f9354fd7c0d9
 // MODELS
 const models = require("./app/models");
 
@@ -42,7 +50,7 @@ const authRoute = require("./app/routes/auth.js")(app, passport);
 require("./app/config/passport/passport.js")(passport, models.user);
 
 // MYSQL SYNC DB
-models.sequelize.sync().then(function () { 
+models.sequelize.sync().then(function () {
     console.log("User Authentication Database Synced.")
 }).catch(function (err) {
     console.log(err)
@@ -51,6 +59,6 @@ models.sequelize.sync().then(function () {
 
 // LISTEN
 app.listen(PORT, function (err) {
-    if (!err) console.log(`Listening on Port ${PORT}`);
+    if (!err) console.log(`Listening on localhost:${PORT}`);
     else console.log(err);
 });
