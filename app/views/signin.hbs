@@ -1,8 +1,8 @@
+{{#if error}}
+<div class="alert alert-danger">{{error}}</div>
+{{/if}}
 <div>
-    {{#if error}}
-        <div class="alert alert-danger">{{error}}</div>
-    {{/if}}
-    <form id="signin" name="signin" method="post" action="signin">
+    <form id="signin" name="signin" method="POST" action="signin">
         <label for="email">Email Address</label>
         <input class="text" name="email" type="text" />
         <label for="password">Password</label>
