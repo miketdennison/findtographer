@@ -61,6 +61,6 @@ models.sequelize.sync().then(function () {
 
 // LISTEN
 app.listen(PORT, function (err) {
-    if (!err) console.log(`Listening on Port ${PORT}`);
+    if (!err) console.log(`Listening on localhost:${PORT}`);
     else console.log(err);
 });

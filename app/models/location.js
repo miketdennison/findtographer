@@ -1,7 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
     var Location = sequelize.define("Location", {
           city: {
-              type: DataTypes.STING,
+              type: DataTypes.STRING,
               allowNull: false
           },
           state: {
