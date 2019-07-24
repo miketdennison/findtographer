@@ -1,9 +1,13 @@
 <!-- Container div -->
 <div class="container">
-
+    <h2 class="header">Sign In</h2>
     {{#if error}}
-    <div class="alert alert-danger">{{error}}</div>
+    <div class="chip" style="color:#d9534f;">
+        {{error}}
+        <i class="close material-icons">close</i>
+    </div>
     {{/if}}
+
     <div>
         <form id="signin" name="signin" method="POST" action="signin">
             <label for="email">Email Address</label>

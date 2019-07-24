@@ -33,13 +33,10 @@ app.engine("hbs", exphbs({
 }));
 app.set("view engine", ".hbs");
 
-<<<<<<< HEAD
-=======
 app.get("/", function (req, res) {
     res.render("index");
 });
 
->>>>>>> 1ebe717c195875faa1ec9a17c5a5f9354fd7c0d9
 // MODELS
 const models = require("./app/models");
 
