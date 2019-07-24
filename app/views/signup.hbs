@@ -1,16 +1,50 @@
-{{#if error}}
-<div class="alert alert-danger">{{error}}</div>
-{{/if}}
-<div>
-    <form id="signup" name="signup" method="POST" action="/signup">
-        <label for="email">Email Address</label>
-        <input class="text" name="email" type="email" />
-        <label for="firstname">Firstname</label>
-        <input name="firstname" type="text" />
-        <label for="lastname">Lastname</label>
-        <input name="lastname" type="text" />
-        <label for="password">Password</label>
-        <input name="password" type="password" />
-        <input class="btn" type="submit" value="Sign Up" />
-    </form>
-</label>
+<!-- Container div -->
+<div class="container">
+
+    <div class="parallax-container">
+        <div class="parallax"><img src="https://picsum.photos/400/1000"></div>
+    </div>
+    <div class="section white">
+        <div class="row container">
+            <h2 class="header">Sign Up</h2>
+            {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+            {{/if}}
+            <div>
+                <form id="signup" name="signup" method="POST" action="/signup">
+                    <label for="email">Email Address</label>
+                    <input class="text" name="email" type="email" />
+                    <label for="firstname">Firstname</label>
+                    <input name="firstname" type="text" />
+                    <label for="lastname">Lastname</label>
+                    <input name="lastname" type="text" />
+                    <label for="password">Password</label>
+                    <input name="password" type="password" />
+                    <input class="btn" type="submit" value="Sign Up" />
+                </form>
+                </label>
+            </div>
+        </div>
+        <div class="parallax-container">
+            <div class="parallax"><img src="https://picsum.photos/400/500"></div>
+        </div>
+
+        {{!-- {{#if error}}
+    <div class="alert alert-danger">{{error}}</div>
+    {{/if}}
+    <div>
+        <form id="signup" name="signup" method="POST" action="/signup">
+            <label for="email">Email Address</label>
+            <input class="text" name="email" type="email" />
+            <label for="firstname">Firstname</label>
+            <input name="firstname" type="text" />
+            <label for="lastname">Lastname</label>
+            <input name="lastname" type="text" />
+            <label for="password">Password</label>
+            <input name="password" type="password" />
+            <input class="btn" type="submit" value="Sign Up" />
+        </form>
+        </label> --}}
+
+        <!-- Closing container div -->
+    </div>

@@ -99,9 +99,10 @@ $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 //Materialize slider
-// $(document).ready(function () {
-// $('.slider').slider();
-// });
+$('.slider').slider();
+
+//Parallax 
+$('.parallax').parallax();
 
 //On click for I'm looking for a photographer button.
 $('#looking').click(function () {
