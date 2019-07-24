@@ -1,20 +1,21 @@
 // DEPENDENCIES
 // Express
 const express = require("express");
-const app = express();
-// Handles authentication
+var flash = require('connect-flash');
 const passport = require("passport");
 const session = require("express-session");
 const env = require("dotenv").config();
 const exphbs = require("express-handlebars");
+const app = express();
+// Handles authentication
+
 const PORT = 5000;
 
 // PARSING
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-var flash = require('connect-flash');
 
-
+app.use(flash());
 // PASSPORT
 app.use(session({
     secret: "keyboard cat",
@@ -23,7 +24,6 @@ app.use(session({
 })); //used for hashing
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(flash());
 
 //For Handlebars
 app.set("views", "./app/views")
@@ -44,6 +44,11 @@ const authRoute = require("./app/routes/auth.js")(app, passport);
 
 // PASSPORT
 require("./app/config/passport/passport.js")(passport, models.user);
+
+
+
+
+
 
 // MYSQL SYNC DB
 models.sequelize.sync().then(function () {

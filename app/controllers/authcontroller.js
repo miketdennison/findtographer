@@ -1,10 +1,10 @@
 var exports = module.exports = {}
 
 exports.signup = function (req, res) {
-    res.render("signup", { error: req.flash("Email is already taken. Try again.") });
+    res.render("signup", { error: req.flash("error") });
 }
 exports.signin = function (req, res) {
-    res.render("signin", { error: req.flash("Invalid username or password. Try again.") });
+    res.render("signin", { error: req.flash("error") });
 }
 exports.dashboard = function (req, res) {
     res.render("dashboard");

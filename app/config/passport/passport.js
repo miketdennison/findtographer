@@ -38,6 +38,7 @@ module.exports = function (passport, user) {
                 }
             }).then(function (user) {
                 if (user) {
+                    console.log("That email is already taken.")
                     return done(null, false, {
                         message: "That email is already taken."
                     });
@@ -81,11 +82,13 @@ module.exports = function (passport, user) {
                 }
             }).then(function (user) {
                 if (!user) {
+                    console.log('Error user dont exists')
                     return done(null, false, {
                         message: "Email does not exist"
                     });
                 }
                 if (!isValidPassword(user.password, password)) {
+                             console.log('Password not exists')
                     return done(null, false, {
                         message: "Incorrect password."
                     });
