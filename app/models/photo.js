@@ -1,10 +1,12 @@
 module.exports = function (sequelize, DataTypes) {
     var Photo = sequelize.define("Photo", {
-        name: {
-            type: {
-                first: DataTypes.STRING,
-                last: DataTypes.STRING
-            }
+        firstName: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        lastName: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
         photo: {
             type: DataTypes.STRING,
