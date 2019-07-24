@@ -33,7 +33,7 @@ app.engine("hbs", exphbs({
 app.set("view engine", ".hbs");
 
 app.get("/", function (req, res) {
-    res.send("Welcome to Passport with Sequelize");
+    res.render("index");
 });
 
 // MODELS
@@ -46,7 +46,7 @@ const authRoute = require("./app/routes/auth.js")(app, passport);
 require("./app/config/passport/passport.js")(passport, models.user);
 
 // MYSQL SYNC DB
-models.sequelize.sync().then(function () { 
+models.sequelize.sync().then(function () {
     console.log("User Authentication Database Synced.")
 }).catch(function (err) {
     console.log(err)
