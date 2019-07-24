@@ -11,6 +11,7 @@ const app = express();
 
 const PORT = 5000;
 
+app.use(express.static('app/public'))
 // PARSING
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
