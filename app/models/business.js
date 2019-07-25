@@ -1,10 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
   var Business = sequelize.define("Business", {
-      businessID: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true
-      },
       businessName: {
         type:DataTypes.STRING,
         allowNull: false
