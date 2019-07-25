@@ -23,7 +23,7 @@ module.exports = function (sequelize, Sequelize) {
         //     type: Sequelize.STRING,
         //     allowNull: false
         // },
-        // pricing: {
+        // price: {
         //     type: Sequelize.STRING,
         //     allowNull: false
         //   },
@@ -33,10 +33,7 @@ module.exports = function (sequelize, Sequelize) {
         //   },
           
         
-        // experience: {
-        //     type: Sequelize.INTEGER,
-        //     allowNull: false
-        // },
+        // 
         
 
         
@@ -62,7 +59,23 @@ module.exports = function (sequelize, Sequelize) {
         password: {
             type: Sequelize.STRING,
             allowNull: false
-        }
+        }, 
+        experience: {
+            type: Sequelize.INTEGER,
+            allowNull: false
+        },
+        price: {
+                type: Sequelize.STRING,
+                allowNull: false
+        },
+        city: {
+            type: Sequelize.STRING,
+                allowNull: false
+        },
+          state: {
+            type: Sequelize.STRING,
+                allowNull: false
+          }
     });
 
     User.associate = function (models) {
