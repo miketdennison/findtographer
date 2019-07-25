@@ -2,6 +2,18 @@
   line-height: 2.5;
 }
 
+.brand-logo {
+    font-family: 'Atma';font-size: 22px;
+}
+
+.home {
+  font-family: 'Atma';font-size: 22px;
+}
+
+.footer-copyright {
+  font-family: 'Atma';font-size: 22px;
+}
+
 
 body{
   /* min-height: 2000px; */
@@ -17,3 +29,8 @@ body{
 blockquote {
   border-left: 5px solid #26a59a;
 }
+
+.parallax-container {
+  height: 250px;
+}
+
