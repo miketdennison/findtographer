@@ -105,18 +105,24 @@ $(document).ready(function () {
   //Parallax 
   $('.parallax').parallax();
 
-  //Select
-  // $('select').material_select();
+  //Autocomplete field
+  $('input.autocomplete').autocomplete({
+    data: {
+      "AL": null,
+      "AK": null,
+      "Google": 'https://placehold.it/250x250'
+    },
+  });
 
   //On click for I'm looking for a photographer button.
   $('#looking').click(function () {
 
-    $("#questions").html(`
-    <h4>
+    $("#questions").hide().html(`
+    <h5>
     <blockquote>
     What artistic style do you like?:
     </blockquote>
-    </h4>
+    </h5>
   <div class="input-field col s12">
     <select multiple>
       <option value="" disabled selected>Choose your option</option>
@@ -128,11 +134,11 @@ $(document).ready(function () {
     </select>
   </div>
 
-  <h4>
+  <h5>
   <blockquote>
   Minimum experience do you prefer your photographer to have:
   </blockquote>
-  </h4>
+  </h5>
 <div class="input-field col s12">
   <select multiple>
     <option value="" disabled selected>Choose your option</option>
@@ -142,11 +148,11 @@ $(document).ready(function () {
   </select>
 </div>
 
-<h4>
+<h5>
 <blockquote teal lighten-2>
 How much are you willing to pay?:
 </blockquote>
-</h4>
+</h5>
 <div class="input-field col s12">
 <select multiple>
   <option value="" disabled selected>Choose your option</option>
@@ -157,7 +163,35 @@ How much are you willing to pay?:
   <option value="5">$$$$$</option>
 </select>
 </div>
-`)
+
+<blockquote teal lighten-2>
+<div class="row">
+<h5>
+<div class="input-field col s6">
+What city do you live in?
+</div>
+
+</h5>
+<h5>
+<div class="input-field col s6">
+What state do you live in?
+
+</h5>
+</blockquote>
+
+<div class="row">
+<form class="col s12">
+    <div class="input-field col s6">
+    <input id="city_name" type="text" class="validate">
+    <label for="city_name">City</label>
+    </div>
+    <div class="input-field col s6">
+      <input id="state_name" type="text" class="validate">
+      <label for="state_name">State</label>
+    </div>
+    </form>
+  </div>
+`).fadeIn("slow");
     $('select').formSelect();
   });
 })
