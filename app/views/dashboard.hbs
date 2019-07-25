@@ -1,40 +1,100 @@
 <div class="container">
 
     <hr>
+    <!-- Users(username, password, experience, price, city, state, createdAt, updatedAt)-->
+    
+    <!-- BUSINESS NAME -->
+    <h5>
+        <blockquote>What is your business name?:</blockquote>
+    </h5>
+    <div class="row">
+        <form class="col s12">
+            <div class="input-field col s6">
+                <!--Username === Business Name in DB -->
+                <input id="username" type="text" class="validate">
+                <label for="username">Business Name</label> 
+            </div>
+        </form>
+    </div>
+
+    <!-- CITY & STATE -->
+    <blockquote teal lighten-2>
+        <div class="row">
+            <h5>
+                <div class="input-field col s6">
+                    What city do you live in?:
+                </div>
+
+            </h5>
+            <h5>
+                <div class="input-field col s6">
+                    What state do you live in?:
+                </div>
+            </h5>
+    </blockquote>
+    <div class="row">
+        <form class="col s12">
+            <div class="input-field col s6">
+                <input id="city" type="text" class="validate">
+                <label for="city">City</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="state" type="text" class="validate">
+                <label for="state">State</label>
+            </div>
+        </form>
+    </div>
+
+    <!-- TRAVEL -->
     <h5>
         <blockquote>
-            What artistic style do you like?:
+            Are you willing to travel outside your city?:
         </blockquote>
     </h5>
-    <div class="input-field col s12">
+    <div class="travel input-field col s12">
         <select multiple>
             <option value="" disabled selected>Choose your option</option>
-            <option value="1">Traditional</option>
-            <option value="2">Photojournalistic</option>
-            <option value="3">Fine Art</option>
-            <option value="4">Adventure</option>
-            <option value="5">Aerial</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
         </select>
     </div>
 
+    <!-- ARTISTIC STYLE -->
     <h5>
         <blockquote>
-            Minimum experience do you prefer your photographer to have:
+            Which best decsribes your artistic style?:
+        </blockquote>
+    </h5>
+    <div id="categories" class="input-field col s12">
+        <select multiple>
+            <option value="" disabled selected>Choose your option</option>
+            <option value="traditional">Traditional</option>
+            <option value="photojournalistic">Photojournalistic</option>
+            <option value="fineart">Fine Art</option>
+            <option value="adventure">Adventure</option>
+            <option value="aerial">Aerial</option>
+        </select>
+    </div>
+
+    <!-- EXPEREINCE -->
+    <h5>
+        <blockquote>
+           Which best describes your experience?:
         </blockquote>
     </h5>
     <div class="input-field col s12">
         <select multiple>
             <option value="" disabled selected>Choose your option</option>
             <option value="1">1-3 Years</option>
-            <option value="2">3-5 Years</option>
-            <option value="3">5+ Years</option>
+            <option value="3">3-5 Years</option>
+            <option value="5">5+ Years</option>
         </select>
     </div>
 
-
+    <!-- PRICING PACKAGE -->
     <h5>
         <blockquote teal lighten-2>
-            How much are you willing to pay?:
+            How would you describe your average pricing package?:
         </blockquote>
     </h5>
     <div class="input-field col s12">
@@ -47,37 +107,9 @@
             <option value="5">$$$$$</option>
         </select>
     </div>
-
-
-    <blockquote teal lighten-2>
-        <div class="row">
-            <h5>
-                <div class="input-field col s6">
-                    What city do you live in?
-                </div>
-
-            </h5>
-            <h5>
-                <div class="input-field col s6">
-                    What state do you live in?
-
-            </h5>
-    </blockquote>
-
-    <div class="row">
-        <form class="col s12">
-            <div class="input-field col s6">
-                <input id="city_name" type="text" class="validate">
-                <label for="city_name">City</label>
-            </div>
-            <div class="input-field col s6">
-                <input id="state_name" type="text" class="validate">
-                <label for="state_name">State</label>
-            </div>
-        </form>
-    </div>
     <hr>
 
+    <!-- SUBMIT BUTTON -->
     <button id="dashboardbutton">Submit</button>
 
 </div>
