@@ -1,49 +1,75 @@
+
 module.exports = function (sequelize, Sequelize) {
     var User = sequelize.define('user', {
-        id: {
-            autoIncrement: true,
-            primaryKey: true,
-            type: Sequelize.INTEGER
-        },
+        // businessName: {
+        //     type: Sequelize.STRING,
+        //     allowNull: false
+        //   },
+        //   firstname: {
+        //     type: Sequelize.STRING,
+        //     notEmpty: true
+        // },
 
-        firstname: {
-            type: Sequelize.STRING,
-            notEmpty: true
-        },
+        // lastname: {
+        //     type: Sequelize.STRING,
+        //     notEmpty: true
+        // },
+         
+        //   city: {
+        //     type: Sequelize.STRING,
+        //     allowNull: false
+        // },
+        // state: {
+        //     type: Sequelize.STRING,
+        //     allowNull: false
+        // },
+        // pricing: {
+        //     type: Sequelize.STRING,
+        //     allowNull: false
+        //   },
+        //   travel: {
+        //     type: Sequelize.BOOLEAN,
+        //     defaultValue: true
+        //   },
+          
+        
+        // experience: {
+        //     type: Sequelize.INTEGER,
+        //     allowNull: false
+        // },
+        
 
-        lastname: {
-            type: Sequelize.STRING,
-            notEmpty: true
-        },
-
+        
+       
+        // website: {
+        //     type: Sequelize.STRING,
+        //     allowNull: false
+        //   },
+        //   phone: {
+        //       type: Sequelize.STRING,
+        //       allowNull: false
+        //   },
+        // email: {
+        //     type: Sequelize.STRING,
+        //     validate: {
+        //         isEmail: true
+        //     }
+        // },
         username: {
             type: Sequelize.TEXT
-        },
-
-        about: {
-            type: Sequelize.TEXT
-        },
-
-        email: {
-            type: Sequelize.STRING,
-            validate: {
-                isEmail: true
-            }
         },
 
         password: {
             type: Sequelize.STRING,
             allowNull: false
-        },
-
-        last_login: {
-            type: Sequelize.DATE
-        },
-
-        status: {
-            type: Sequelize.ENUM('active', 'inactive'),
-            defaultValue: 'active'
         }
     });
+
+    User.associate = function (models) {
+        User.hasMany(models.Category, {
+            onDelete: 'cascade',
+            allowNull: false
+        });
+    }
     return User;
 }

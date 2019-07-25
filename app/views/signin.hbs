@@ -1,37 +1,33 @@
 <div class="parallax-container">
     <div class="parallax"><img src="/images/leaves.jpg"></div>
-</div>
+    <!-- Container div -->
+    <div class="container z-depth-5 hoverable">
 
-<!-- Container div -->
-<div class="container">
+        <div class="section white">
+            <div class="row container">
 
-    <div class="section white">
-        <div class="row container">
+                <h2 class="header">Sign In</h2>
+                {{#if error}}
+                <div class="chip" style="color:#d9534f;">
+                    {{error}}
+                    <i class="close material-icons">close</i>
+                </div>
+                {{/if}}
 
-            <h2 class="header">Sign In</h2>
-            {{#if error}}
-            <div class="chip" style="color:#26a59a;">
-                {{error}}
-                <i class="close material-icons">close</i>
-            </div>
-            {{/if}}
-
-            <div>
-                <form id="signin" name="signin" method="POST" action="signin">
-                    <label for="email">Email Address</label>
-                    <input class="text" name="email" type="text" />
-                    <label for="password">Password</label>
-                    <input name="password" type="password" />
-                    <input class="btn" type="submit" value="Sign In" />
-                </form>
-                <div style="margin-bottom: 50px;">&nbsp;</div>
+                <div>
+                    <form id="signin" name="signin" method="POST" action="signin">
+                        <label for="email">Email Address</label>
+                        <input class="text" name="email" type="text" />
+                        <label for="password">Password</label>
+                        <input name="password" type="password" />
+                        <input class="btn" type="submit" value="Sign In" />
+                    </form>
+                    <div style="margin-bottom: 50px;">&nbsp;</div>
 
 
-                <!-- Closing container div -->
+                    <!-- Closing container div -->
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="parallax-container">
-    <div class="parallax"><img src="/images/leaves.jpg"></div>
 </div>

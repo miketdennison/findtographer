@@ -105,6 +105,9 @@ $(document).ready(function () {
   //Parallax 
   $('.parallax').parallax();
 
+  //Forms
+  // $('select').formSelect();
+
   //Autocomplete field
   $('input.autocomplete').autocomplete({
     data: {
@@ -118,6 +121,7 @@ $(document).ready(function () {
   $('#looking').click(function () {
 
     $("#questions").hide().html(`
+    <hr>
     <h5>
     <blockquote>
     What artistic style do you like?:
@@ -148,6 +152,7 @@ $(document).ready(function () {
   </select>
 </div>
 
+
 <h5>
 <blockquote teal lighten-2>
 How much are you willing to pay?:
@@ -163,6 +168,7 @@ How much are you willing to pay?:
   <option value="5">$$$$$</option>
 </select>
 </div>
+
 
 <blockquote teal lighten-2>
 <div class="row">
@@ -191,6 +197,7 @@ What state do you live in?
     </div>
     </form>
   </div>
+  <hr>
 `).fadeIn("slow");
     $('select').formSelect();
   });
