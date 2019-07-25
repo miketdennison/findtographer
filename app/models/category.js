@@ -1,18 +1,20 @@
-module.exports = function (sequelize, DataTypes) {
+
+module.exports = function (sequelize, Sequelize) {
     var Category = sequelize.define("Category", {
             type: {
-                type: DataTypes.STRING,
+                type: Sequelize.STRING,
                 allowNull: false
             }
         });
-
+/*
     //define foreign key constraints
     Category.associate = function(models) {
-        Category.belongsTo(models.Business, {
+        Category.belongsTo(models.User, {
+           
             foreignKey: {
-                allowNull:false
+                allowNull: false
             }
         });
-    }
+    }*/
     return Category;
 };
