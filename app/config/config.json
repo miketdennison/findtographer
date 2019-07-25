@@ -9,14 +9,14 @@
        },
     "test": {
         "username": "root",
-        "password": "mysqlpw123!",
+        "password": "password",
         "database": "sequelize_passport",
-        "host": "",
+        "host": "127.0.0.1",
         "dialect": "mysql"
     },
     "production": {
         "username": "root",
-        "password": "mysqlpw123!",
+        "password": "password",
         "database": "sequelize_passport",
         "host": "127.0.0.1",
         "dialect": "mysql"

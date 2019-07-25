@@ -1,6 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
     var Location = sequelize.define("Location", {
-          city: {
+    
+        city: {
               type: DataTypes.STRING,
               allowNull: false
           },
@@ -14,8 +15,9 @@ module.exports = function (sequelize, DataTypes) {
     //define foreign key constraints
     Location.associate = function(models) {
         Location.belongsTo(models.Business,{
+           
             foreignKey: {
-                allowNull:false
+                allowNull: false
             }
         });
     }
