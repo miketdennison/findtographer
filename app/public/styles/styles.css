@@ -10,8 +10,18 @@
   font-family: 'Atma';font-size: 22px;
 }
 
+h2 {
+  font-family: 'Atma';font-size: 22px;
+  color: #26a59a;
+  font-size: 50px;
+}
+
 .footer-copyright {
   font-family: 'Atma';font-size: 22px;
+}
+
+.caption {
+  text-shadow: 2px 2px 4px #000000;
 }
 
 
@@ -19,18 +29,31 @@ body{
   /* min-height: 2000px; */
   background-image: url("../images/background.png");
   /* background-size: cover; */
-}
+ }
 
 #started {
   height: 200px;
   width: 500px;
 }
 
+.started {
+  font-family: 'Atma';font-size: 22px;
+  color: #26a59a;
+  font-size: 50px;
+  padding: 50px;
+}
+
 blockquote {
   border-left: 5px solid #26a59a;
 }
 
+.qbox {
+  border: 1px solid #26a59a;
+  padding: 5px;
+}
+
 .parallax-container {
-  height: 250px;
+  height: 100%;
+  padding: 80px;
 }
 

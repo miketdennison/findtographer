@@ -1,37 +1,32 @@
 <div class="parallax-container">
     <div class="parallax"><img src="/images/flowers.jpg"></div>
-</div>
-
-<!-- Container div -->
-<div class="container">
-    <div class="section white">
-        <div class="row container">
-            <h2 class="header">Sign Up</h2>
-            {{#if error}}
-            <div class="chip" style="color:#d9534f;">
-                {{error}}
-                <i class="close material-icons">close</i>
+    <div class="container z-depth-5 hoverable">
+        <div class="section white">
+            <div class="row container">
+                <h2 class="header">Sign Up</h2>
+                {{#if error}}
+                <div class="chip" style="color:#d9534f;">
+                    {{error}}
+                    <i class="close material-icons">close</i>
+                </div>
+                {{/if}}
+                <div>
+                    <form id="signup" name="signup" method="POST" action="/signup">
+                        <label for="email">Email Address</label>
+                        <input class="text" name="email" type="email" />
+                        <label for="firstname">Firstname</label>
+                        <input name="firstname" type="text" />
+                        <label for="lastname">Lastname</label>
+                        <input name="lastname" type="text" />
+                        <label for="password">Password</label>
+                        <input name="password" type="password" />
+                        <input class="btn" type="submit" value="Sign Up" />
+                    </form>
+                    <div style="margin-bottom: 50px;">&nbsp;</div>
+                    </label>
+                </div>
             </div>
-            {{/if}}
-            <div>
-                <form id="signup" name="signup" method="POST" action="/signup">
-                    <label for="email">Email Address</label>
-                    <input class="text" name="email" type="email" />
-                    <label for="firstname">Firstname</label>
-                    <input name="firstname" type="text" />
-                    <label for="lastname">Lastname</label>
-                    <input name="lastname" type="text" />
-                    <label for="password">Password</label>
-                    <input name="password" type="password" />
-                    <input class="btn" type="submit" value="Sign Up" />
-                </form>
-                <div style="margin-bottom: 50px;">&nbsp;</div>
-                </label>
-            </div>
+            <!-- Closing container div -->
         </div>
-        <!-- Closing container div -->
     </div>
-</div>
-<div class="parallax-container">
-    <div class="parallax"><img src="/images/flowers.jpg"></div>
 </div>
