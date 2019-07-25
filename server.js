@@ -1,14 +1,13 @@
 // DEPENDENCIES
-// Express
 const express = require("express");
-var flash = require('connect-flash');
+const flash = require('connect-flash');
 const passport = require("passport");
 const session = require("express-session");
 const env = require("dotenv").config();
 const exphbs = require("express-handlebars");
 const app = express();
-// Handles authentication
 
+// PORT
 const PORT = 5000;
 
 app.use(express.static('app/public'))
@@ -17,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(flash());
+
 // PASSPORT
 app.use(session({
     secret: "keyboard cat",
@@ -36,6 +36,9 @@ app.set("view engine", ".hbs");
 app.get("/", function (req, res) {
     res.render("index");
 });
+app.get("/results", function (req, res) {
+    res.render("results");
+});
 
 // MODELS
 const models = require("./app/models");
@@ -45,11 +48,6 @@ const authRoute = require("./app/routes/auth.js")(app, passport);
 
 // PASSPORT
 require("./app/config/passport/passport.js")(passport, models.user);
-
-
-
-
-
 
 // MYSQL SYNC DB
 models.sequelize.sync().then(function () {

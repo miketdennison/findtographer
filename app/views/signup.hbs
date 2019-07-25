@@ -8,7 +8,10 @@
         <div class="row container">
             <h2 class="header">Sign Up</h2>
             {{#if error}}
-            <div class="alert alert-danger">{{error}}</div>
+            <div class="chip" style="color:#d9534f;">
+               {{error}}
+                <i class="close material-icons">close</i>
+            </div>
             {{/if}}
             <div>
                 <form id="signup" name="signup" method="POST" action="/signup">
