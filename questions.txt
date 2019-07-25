@@ -1,0 +1,50 @@
+==========================================
+Photographer Questions:
+==========================================
+Q: Describe your artistic style(s):
+    * Traditional
+    * Photojournalistic
+    * Fine Art
+    * Adventure
+    * Aerial
+Q: Where is your business location:
+    [   City   ] [  State  ]
+Q: Are you willing to travel (long distance)?
+    * Yes
+    * No
+Q: Years Experience:
+    * 1-3 Years
+    * 3-5 Years
+    * 5+ Years    
+Q: Average Pricing Package:
+    * $
+    * $$
+    * $$$
+    * $$$$
+    * $$$$$
+Q: Business Website: [   Text Box    ]
+Q: Business Phone: [   Text Box    ]
+Q: Business Email: [   Text Box    ]
+Q: Enter a URL to a photo of yourself: [   Text Box    ]
+
+==========================================
+Client Questions:
+==========================================
+Q: What artistic style do you like?
+    * Traditional
+    * Photojournalistic
+    * Fine Art
+    * Adventure
+    * Aerial
+Q: Where are you getting married:
+    [   City   ] [  State  ]
+Q: Minimum experience do you prefer your photograher to have:
+    * 1-3 Years
+    * 3-5 Years
+    * 5+ Years    
+Q: How much are you willing to pay?
+    * $
+    * $$
+    * $$$
+    * $$$$
+    * $$$$$
