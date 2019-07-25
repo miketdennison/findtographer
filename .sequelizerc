@@ -1,4 +1,9 @@
 var path = require('path')
+
 module.exports = {
         'config': path.resolve('app','config', 'config.json')
 }
+
+
+
+
