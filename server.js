@@ -36,6 +36,9 @@ app.set("view engine", ".hbs");
 app.get("/", function (req, res) {
     res.render("index");
 });
+app.get("/results", function (req, res) {
+    res.render("results");
+});
 
 // MODELS
 const models = require("./app/models");
