@@ -1,18 +1,30 @@
+<div class="parallax-container">
+    <div class="parallax"><img src="/images/leaves.jpg"></div>
+</div>
+
 <!-- Container div -->
 <div class="container">
+    <div class="section white">
+        <div class="row container">
+            <h2 class="header">Sign In</h2>
 
-    {{#if error}}
-    <div class="alert alert-danger">{{error}}</div>
-    {{/if}}
-    <div>
-        <form id="signin" name="signin" method="POST" action="signin">
-            <label for="email">Email Address</label>
-            <input class="text" name="email" type="text" />
-            <label for="password">Password</label>
-            <input name="password" type="password" />
-            <input class="btn" type="submit" value="Sign In" />
-        </form>
 
+            {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+            {{/if}}
+            <div>
+                <form id="signin" name="signin" method="POST" action="signin">
+                    <label for="email">Email Address</label>
+                    <input class="text" name="email" type="text" />
+                    <label for="password">Password</label>
+                    <input name="password" type="password" />
+                    <input class="btn" type="submit" value="Sign In" />
+                </form>
+            </div>
+            <!-- Closing container div -->
+        </div>
     </div>
-    <!-- Closing container div -->
+</div>
+<div class="parallax-container">
+    <div class="parallax"><img src="/images/leaves.jpg"></div>
 </div>
