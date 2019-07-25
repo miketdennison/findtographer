@@ -105,6 +105,9 @@ $(document).ready(function () {
   //Parallax 
   $('.parallax').parallax();
 
+  //Forms
+  // $('select').formSelect();
+
   //Autocomplete field
   $('input.autocomplete').autocomplete({
     data: {
