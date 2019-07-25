@@ -174,13 +174,13 @@ How much are you willing to pay?:
 <div class="row">
 <h5>
 <div class="input-field col s6">
-What city do you live in?
+What city are you getting married in?
 </div>
 
 </h5>
 <h5>
 <div class="input-field col s6">
-What state do you live in?
+What state are you getting married in?
 
 </h5>
 </blockquote>
@@ -201,4 +201,5 @@ What state do you live in?
 `).fadeIn("slow");
     $('select').formSelect();
   });
-})
+});
+
