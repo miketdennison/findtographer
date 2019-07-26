@@ -35,11 +35,11 @@ module.exports = function (sequelize, Sequelize) {
             allowNull: false
         },
         experience: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.ARRAY(Sequelize.STRING),
             allowNull: true
         },
         price: {
-            type: Sequelize.STRING,
+            type: Sequelize.ARRAY(Sequelize.STRING),
             allowNull: true
         },
         city: {
@@ -50,8 +50,8 @@ module.exports = function (sequelize, Sequelize) {
             type: Sequelize.STRING,
             allowNull: true
         },
-        travel :{
-            type: Sequelize.BOOLEAN,
+        travel: {
+            type: Sequelize.ARRAY(Sequelize.STRING),
             allowNull: true
         },
         last_login: {
