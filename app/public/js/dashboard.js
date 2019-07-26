@@ -17,9 +17,10 @@ $("#dashboardbutton").click(function (event) {
         price: $("#pricing").val(),
     };
 
-    $.ajax({ url: '/api/userupdate', method: 'PUT', data: userData }).then(function () {
-        console.log('sent to route')
+    $.ajax({ url: '/api/userupdate', method: 'PUT', data: userData }).then(function (responseServer) {
+        console.log(responseServer)
     })
+
 })
 
 // firstname: {
