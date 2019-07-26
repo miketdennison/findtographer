@@ -34,18 +34,20 @@ app.engine("hbs", exphbs({
 app.set("view engine", ".hbs");
 
 
-app.get("/", function (req, res) {
-    res.render("index");
-});
-app.get("/results", function (req, res) {
-    res.render("results");
-});
+// app.get("/", function (req, res) {
+//     res.render("index");
+// });
+// app.get("/results", function (req, res) {
+//     res.render("results");
+// });
 
 // MODELS
 const models = require("./app/models");
 
 // ROUTES
 const authRoute = require("./app/routes/auth.js")(app, passport);
+require("./app/routes/api-routes.js")(app);
+require('./app/routes/htmlRoutes.js')(app);
 
 // PASSPORT
 require("./app/config/passport/passport.js")(passport, models.user);

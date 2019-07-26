@@ -2,7 +2,34 @@
 
     <hr>
     <!-- Users(username, password, experience, price, city, state, createdAt, updatedAt)-->
-    
+    <!-- Name -->
+    <blockquote teal lighten-2>
+        <div class="row">
+            <h5>
+                <div class="input-field col s6">
+                    What is your first name?:
+                </div>
+
+            </h5>
+            <h5>
+                <div class="input-field col s6">
+                    What is your last name?:
+                </div>
+            </h5>
+    </blockquote>
+    <div class="row">
+        <form class="col s12">
+            <div class="input-field col s6">
+                <input id="firstname" type="text" class="validate">
+                <label for="firstname">First Name</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="lastname" type="text" class="validate">
+                <label for="lastname">Last Name</label>
+            </div>
+        </form>
+    </div>
+
     <!-- BUSINESS NAME -->
     <h5>
         <blockquote>What is your business name?:</blockquote>
@@ -12,7 +39,7 @@
             <div class="input-field col s6">
                 <!--Username === Business Name in DB -->
                 <input id="username" type="text" class="validate">
-                <label for="username">Business Name</label> 
+                <label for="username">Business Name</label>
             </div>
         </form>
     </div>
@@ -52,7 +79,7 @@
         </blockquote>
     </h5>
     <div class="travel input-field col s12">
-        <select multiple>
+        <select id="travel" multiple>
             <option value="" disabled selected>Choose your option</option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
@@ -66,7 +93,7 @@
         </blockquote>
     </h5>
     <div id="categories" class="input-field col s12">
-        <select multiple>
+        <select id="artistic" multiple>
             <option value="" disabled selected>Choose your option</option>
             <option value="traditional">Traditional</option>
             <option value="photojournalistic">Photojournalistic</option>
@@ -79,11 +106,11 @@
     <!-- EXPEREINCE -->
     <h5>
         <blockquote>
-           Which best describes your experience?:
+            Which best describes your experience?:
         </blockquote>
     </h5>
     <div class="input-field col s12">
-        <select multiple>
+        <select id="experience" multiple>
             <option value="" disabled selected>Choose your option</option>
             <option value="1">1-3 Years</option>
             <option value="3">3-5 Years</option>
@@ -98,7 +125,7 @@
         </blockquote>
     </h5>
     <div class="input-field col s12">
-        <select multiple>
+        <select id="pricing" multiple>
             <option value="" disabled selected>Choose your option</option>
             <option value="1">$</option>
             <option value="2">$$</option>
