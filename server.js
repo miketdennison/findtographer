@@ -5,6 +5,7 @@ const passport = require("passport");
 const session = require("express-session");
 const env = require("dotenv").config();
 const exphbs = require("express-handlebars");
+const models = require("./app/models");
 const app = express();
 
 // PORT
@@ -42,7 +43,7 @@ app.set("view engine", ".hbs");
 // });
 
 // MODELS
-const models = require("./app/models");
+
 
 // ROUTES
 const authRoute = require("./app/routes/auth.js")(app, passport);
@@ -53,15 +54,22 @@ require('./app/routes/htmlRoutes.js')(app);
 require("./app/config/passport/passport.js")(passport, models.user);
 
 // MYSQL SYNC DB
+// models.sequelize.sync().then(function () {
+//     console.log("User Authentication Database Synced.")
+// }).catch(function (err) {
+//     console.log(err)
+// });
+
+
+// LISTEN
+
+
 models.sequelize.sync().then(function () {
-    console.log("User Authentication Database Synced.")
+    app.listen(PORT, function (err) {
+        if (!err) console.log(`Listening on localhost:${PORT}`);
+        else console.log(err);
+    });
 }).catch(function (err) {
     console.log(err)
 });
 
-
-// LISTEN
-app.listen(PORT, function (err) {
-    if (!err) console.log(`Listening on localhost:${PORT}`);
-    else console.log(err);
-});
