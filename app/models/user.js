@@ -30,7 +30,7 @@ module.exports = function (sequelize, Sequelize) {
             allowNull: false
         },
         experience: {
-            type: Sequelize.ARRAY(Sequelize.STRING),
+            type: Sequelize.STRING,
             get: function () {
                 return JSON.parse(this.getDataValue('experience'));
             },
@@ -40,7 +40,7 @@ module.exports = function (sequelize, Sequelize) {
             allowNull: true
         },
         price: {
-            type: Sequelize.ARRAY(Sequelize.STRING),
+            type: Sequelize.STRING,
             get: function () {
                 return JSON.parse(this.getDataValue('price'));
             },
@@ -57,7 +57,7 @@ module.exports = function (sequelize, Sequelize) {
             allowNull: true
         },
         travel: {
-            type: Sequelize.ARRAY(Sequelize.STRING),
+            type: Sequelize.STRING,
             get: function () {
                 return JSON.parse(this.getDataValue('travel'));
             },
@@ -66,14 +66,14 @@ module.exports = function (sequelize, Sequelize) {
             },
             allowNull: true
         },
-        // last_login: {
-        //     type: Sequelize.DATE
-        // },
+        last_login: {
+            type: Sequelize.DATE
+        },
 
-        // status: {
-        //     type: Sequelize.ENUM('active', 'inactive'),
-        //     defaultValue: 'active'
-        // }
+        status: {
+            type: Sequelize.ENUM('active', 'inactive'),
+            defaultValue: 'active'
+        }
     });
     return User;
 }
