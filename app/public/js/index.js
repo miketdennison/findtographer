@@ -109,6 +109,8 @@ $('.parallax').parallax();
 // $('select').formSelect();
 
 
+
+
 $('#signup').on('submit', function (event) {
   event.preventDefault();
   var email = $("input[name=email]").val();
