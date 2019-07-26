@@ -51,7 +51,8 @@ require("./app/routes/api-routes.js")(app);
 require('./app/routes/htmlRoutes.js')(app);
 
 // PASSPORT
-require("./app/config/passport/passport.js")(passport, models.user);
+
+require("./app/config/passport/passport.js")(passport, models.User);
 
 // MYSQL SYNC DB
 // models.sequelize.sync().then(function () {
