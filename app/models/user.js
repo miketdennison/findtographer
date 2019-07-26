@@ -1,26 +1,21 @@
 module.exports = function (sequelize, Sequelize) {
-    var User = sequelize.define('user', {
+    var User = sequelize.define("User", {
         id: {
             autoIncrement: true,
             primaryKey: true,
             type: Sequelize.INTEGER
         },
-
         firstname: {
             type: Sequelize.STRING,
-            notEmpty: true
+            allowNull: true
         },
 
         lastname: {
             type: Sequelize.STRING,
-            notEmpty: true
+            allowNull: true
         },
 
         username: {
-            type: Sequelize.TEXT
-        },
-
-        about: {
             type: Sequelize.TEXT
         },
 
@@ -36,11 +31,22 @@ module.exports = function (sequelize, Sequelize) {
         },
         experience: {
             type: Sequelize.ARRAY(Sequelize.STRING),
+            get: function () {
+                return JSON.parse(this.getDataValue('experience'));
+            },
+            set: function (val) {
+                return this.setDataValue('experience', JSON.stringify(val));
+            },
             allowNull: true
         },
         price: {
             type: Sequelize.ARRAY(Sequelize.STRING),
-            allowNull: true
+            get: function () {
+                return JSON.parse(this.getDataValue('price'));
+            },
+            set: function (val) {
+                return this.setDataValue('price', JSON.stringify(val));
+            }
         },
         city: {
             type: Sequelize.STRING,
@@ -52,16 +58,22 @@ module.exports = function (sequelize, Sequelize) {
         },
         travel: {
             type: Sequelize.ARRAY(Sequelize.STRING),
+            get: function () {
+                return JSON.parse(this.getDataValue('travel'));
+            },
+            set: function (val) {
+                return this.setDataValue('travel', JSON.stringify(val));
+            },
             allowNull: true
         },
-        last_login: {
-            type: Sequelize.DATE
-        },
+        // last_login: {
+        //     type: Sequelize.DATE
+        // },
 
-        status: {
-            type: Sequelize.ENUM('active', 'inactive'),
-            defaultValue: 'active'
-        }
+        // status: {
+        //     type: Sequelize.ENUM('active', 'inactive'),
+        //     defaultValue: 'active'
+        // }
     });
     return User;
 }
