@@ -23,6 +23,7 @@ $("#dashboardbutton").click(function (event) {
 
 })
 
+
 // firstname: {
 //     type: Sequelize.STRING,
 //         notEmpty: true
