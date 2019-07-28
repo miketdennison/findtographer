@@ -206,10 +206,11 @@ What state are you getting married in?
     </div>
     </form>
   </div>
-  <hr>
+  
 
   <a href="/results" id="photographer" class="col s6 hoverable waves-effect waves-light btn-large">
   Get my results</a>
+  <div style="margin-bottom: 30px;">&nbsp;</div>
 `).fadeIn("slow");
   $('select').formSelect();
 });
