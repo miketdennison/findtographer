@@ -9,7 +9,7 @@ const models = require("./app/models");
 const app = express();
 
 // PORT
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 
 app.use(express.static('app/public'))
@@ -67,10 +67,10 @@ require("./app/config/passport/passport.js")(passport, models.User);
 
 
 models.sequelize.sync().then(function () {
-    app.listen(process.env.PORT || 5000, function (err) {
-        // if (err) console.log(`Listening on localhost:${PORT}`);
-        // else console.log(err);
-        if (err) console.log(err);
+    app.listen(PORT, function (err) {
+        if (err) console.log(`Listening on localhost:${PORT}`);
+        else console.log(err);
+        // if (err) console.log(err);
     });
 }).catch(function (err) {
     console.log(err)
