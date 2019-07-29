@@ -18,7 +18,8 @@ $("#dashboardbutton").click(function (event) {
     };
 
     $.ajax({ url: '/api/userupdate', method: 'PUT', data: userData }).then(function (responseServer) {
-        console.log(responseServer)
+        $("#registered").html('<div class="chip" style="color:#d9534f;"> <i class="close material-icons">close</i></div>');
+        console.log(responseServer);
     })
 
 })
