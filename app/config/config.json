@@ -1,11 +1,11 @@
 {
     "development": {
-        "username": "np73pu4dnll5m921",
-        "password": "vu9bs4keb60ai5t5",
-        "database": "afp9qzlzpa69tswf",
-        "host": "ol5tz0yvwp930510.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-        "dialect": "mysql",
-        "port": 3306
+        "username": "root",
+        "password": "mysqlpw123!",
+        "database": "sequelize_passport",
+        "host": "127.0.0.1",
+        "port": 3306,
+        "dialect": "mysql"
     },
     "test": {
         "username": "root",
@@ -14,15 +14,9 @@
         "host": "127.0.0.1",
         "dialect": "mysql"
     },
+    
     "production": {
-        "username": "root",
-        "password": "password",
-        "database": "sequelize_passport",
-        "host": "127.0.0.1",
+        "use_env_variable": "JAWSDB_URL",
         "dialect": "mysql"
     }
-    // "production": {
-    //     "use_env_variable": "JAWSDB_URL",
-    //     "dialect": "mysql"
-    // }
 }
