@@ -4,6 +4,8 @@ $("#dashboardbutton").click(function (event) {
     var email = localStorage.getItem("email");
     console.log(email)
 
+    
+
     var userData = {
         email: email,
         firstname: $("#firstname").val(),
@@ -17,10 +19,18 @@ $("#dashboardbutton").click(function (event) {
         price: $("#pricing").val(),
     };
 
+
+    // localStorage.getItem(userData.email),
+
+
+$("#registered").html('<div class="chip" style="color:#5cb85c";>Success!<i class="close material-icons">close</i></div>');
+
+
+
     $.ajax({ url: '/api/userupdate', method: 'PUT', data: userData }).then(function (responseServer) {
-        $("#registered").html('<div class="chip" style="color:#d9534f;"> <i class="close material-icons">close</i></div>');
-        console.log(responseServer);
-    })
+        console.log(responseServer);    
+    });
+
 
 })
 
