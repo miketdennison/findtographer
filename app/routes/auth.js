@@ -7,7 +7,9 @@ module.exports = function (app, passport) {
     app.post("/signup", passport.authenticate("local-signup", {
         successRedirect: "/dashboard",
         failureRedirect: "/signup",
-        failureFlash: true
+        failureFlash: true,
+        successFlash: true
+        
     }));
     // Verifies user is logged in
     app.get("/dashboard", isLoggedIn, authController.dashboard);
@@ -15,7 +17,8 @@ module.exports = function (app, passport) {
     app.post('/signin', passport.authenticate('local-signin', {
         successRedirect: '/dashboard',
         failureRedirect: '/signin',
-        failureFlash: true
+        failureFlash: true,
+        successFlash: true
     }));
 }
 

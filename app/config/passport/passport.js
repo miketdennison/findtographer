@@ -55,7 +55,9 @@ module.exports = function (passport, user) {
                             return done(null, false);
                         }
                         if (newUser) {
-                            return done(null, newUser);
+                            return done(null, newUser, {
+                                message: "Success! You are now registered."
+                            });
                         }
                     });
                 }
