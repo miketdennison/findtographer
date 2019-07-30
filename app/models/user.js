@@ -30,23 +30,12 @@ module.exports = function (sequelize, Sequelize) {
             allowNull: false
         },
         experience: {
-            type: Sequelize.STRING,
-            get: function () {
-                return JSON.parse(this.getDataValue('experience'));
-            },
-            set: function (val) {
-                return this.setDataValue('experience', JSON.stringify(val));
-            },
+            type: Sequelize.INTEGER,
             allowNull: true
         },
         price: {
-            type: Sequelize.STRING,
-            get: function () {
-                return JSON.parse(this.getDataValue('price'));
-            },
-            set: function (val) {
-                return this.setDataValue('price', JSON.stringify(val));
-            }
+            type: Sequelize.INTEGER,
+            allowNull: true
         },
         city: {
             type: Sequelize.STRING,
