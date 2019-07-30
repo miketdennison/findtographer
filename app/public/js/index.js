@@ -29,7 +29,7 @@ $('#signup').on('submit', function (event) {
 
 //On click for I'm looking for a photographer button.
 $('#looking').click(function () {
-
+  $("#resultstable").html("");
   $("#questions").hide().html(`
     <hr>
     <h5>
@@ -105,7 +105,7 @@ What state are you getting married in?
       <input id="state" type="text" class="validate">
       <label for="state">State</label>
     </div>
-    <input type="submit" id="photographer" class="col s6 hoverable waves-effect waves-light btn-large">
+    <input type="submit" id="submitresults" class="col s6 hoverable waves-effect waves-light btn-large">
     </form>
   </div>
  
@@ -115,7 +115,7 @@ What state are you getting married in?
 });
 // });
 
-$(document).on("click", "#photographer", function (event) {
+$(document).on("click", "#submitresults", function (event) {
   event.preventDefault();
   var userSearch = {
     // email: email,
@@ -126,8 +126,8 @@ $(document).on("click", "#photographer", function (event) {
     city: $("#city").val(),
     state: $("#state").val(),
     travel: $("#travel").val(),
-    experience: $("#experience").val(),
-    price: $("#price").val(),
+    experience: Number($("#experience").val()),
+    price: Number($("#price").val().length),
   };
 
   //   $.ajax({
@@ -147,11 +147,35 @@ $(document).on("click", "#photographer", function (event) {
 
 
 function getResults(userSearch) {
-  
   $.post("/api/results", userSearch, function(data){
+      var htmlRes = '<div class = "container responsive-table z-depth-5 hoverable">' +
+      '<div class = "section white">' +
+      '<table class = "highlight">' +
+      '<thead>' +
+      '<tr>' +
+    '<td><strong>Username</strong></td>' +
+    '<td><strong>City</strong></td>' +
+    '<td><strong>State</strong></td>' +
+    '<td><strong>Email</strong></td>' +
+    '<td><strong>Experience</strong></td>' +
+    '<td><strong>Price</strong></td>' +
+    '</tr>' +
+    '</thead>' +
+    '<tbody>';
     for(var i = 0; i < data.length; i++) {
+      htmlRes += '<tr>'
+      htmlRes += '<td>' + data[i].username + '</td>';
+      htmlRes += '<td>' + data[i].city + '</td>';
+      htmlRes += '<td>' + data[i].state + '</td>';
+      htmlRes += '<td>' + data[i].email + '</td>';
+      htmlRes += '<td>' + data[i].experience + '+ years' + '</td>';
+      htmlRes += '<td>' + '$'.repeat(data[i].price) + '</td></tr>';
       console.log(data[i]);
     }
+    htmlRes += "</tbody>";
+    $("#questions").html("");
+    $("#resultstable").hide().html(htmlRes).fadeIn("slow");
+    console.log(htmlRes);
   });
 
 };

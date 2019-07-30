@@ -64,8 +64,6 @@ require("./app/config/passport/passport.js")(passport, models.User);
 
 
 // LISTEN
-
-
 models.sequelize.sync().then(function () {
     app.listen(PORT, function (err) {
         if (err) console.log(`Listening on localhost:${PORT}`);

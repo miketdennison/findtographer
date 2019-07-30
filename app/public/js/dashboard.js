@@ -15,8 +15,8 @@ $("#dashboardbutton").click(function (event) {
         state: $("#state").val(),
         travel: $("#travel").val(),
         about: $("#artistic").val(),
-        experience: $("#experience").val(),
-        price: $("#pricing").val(),
+        experience: Number($("#experience").val()),
+        price: Number($("#pricing").val()),
     };
 
 
