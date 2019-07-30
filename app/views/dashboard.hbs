@@ -5,7 +5,6 @@
 
         <!-- Users(username, password, experience, price, city, state, createdAt, updatedAt)-->
         <!-- Name -->
-        <div id="registered"></div>
         <blockquote teal lighten-2>
             <div class="row">
                 <h5>
@@ -32,7 +31,18 @@
                 </div>
             </form>
         </div>
-
+        <h5>
+            <blockquote>Enter a web URL to a picture of you:</blockquote>
+        </h5>
+        <div class="row">
+            <form class="col s12">
+                <div class="input-field col s6">
+                    <!--Username === Business Name in DB -->
+                    <input id="picture" type="text" class="validate">
+                    <label for="picture">Picture URL</label>
+                </div>
+            </form>
+        </div>
         <!-- BUSINESS NAME -->
         <h5>
             <blockquote>What is your business name?:</blockquote>
@@ -43,6 +53,20 @@
                     <!--Username === Business Name in DB -->
                     <input id="username" type="text" class="validate">
                     <label for="username">Business Name</label>
+                </div>
+            </form>
+        </div>
+
+        <!-- WEBSITE -->
+        <h5>
+            <blockquote>What is your business website?:</blockquote>
+        </h5>
+        <div class="row">
+            <form class="col s12">
+                <div class="input-field col s6">
+                    <!--Username === Business Name in DB -->
+                    <input id="website" type="text" class="validate">
+                    <label for="website">Website URL</label>
                 </div>
             </form>
         </div>
@@ -137,9 +161,10 @@
                 <option value="5">$$$$$</option>
             </select>
         </div>
-
+        <div id="registered"></div>
         <!-- SUBMIT BUTTON -->
         <a class="btn" id="dashboardbutton">Submit</a>
+
 
     </div>
 </div>
