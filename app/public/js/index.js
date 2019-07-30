@@ -118,11 +118,6 @@ What state are you getting married in?
 $(document).on("click", "#submitresults", function (event) {
   event.preventDefault();
   var userSearch = {
-    // email: email,
-    // firstname: $("#firstname").val(),
-    // lastname: $("#lastname").val(),
-    // username: $("#username").val(),
-    // about: $("#artistic").val(),
     city: $("#city").val(),
     state: $("#state").val(),
     travel: $("#travel").val(),
@@ -130,41 +125,30 @@ $(document).on("click", "#submitresults", function (event) {
     price: Number($("#price").val().length),
   };
 
-  //   $.ajax({
-  //     url: '/api/results',
-  //     method: "GET",
-  //     data: userSearch
-  //   }).then(function (json_data) {
-  //     console.log(json_data);
-  //   })
-  //   console.log(userSearch);
-  // })
-//
-  //$.get('/api/results', userSearch, function (data) {
-    //console.log(data);
+
   getResults(userSearch);
 });
 
 
 function getResults(userSearch) {
-  $.post("/api/results", userSearch, function(data){
-      var htmlRes = '<div class = "container responsive-table z-depth-5 hoverable">' +
+  $.post("/api/results", userSearch, function (data) {
+    var htmlRes = '<div class = "container responsive-table z-depth-5 hoverable">' +
       '<div class = "section white">' +
       '<table class = "highlight">' +
       '<thead>' +
       '<tr>' +
-    '<td><strong>Picture</strong></td>' +
-    '<td><strong>Username</strong></td>' +
-    '<td><strong>City</strong></td>' +
-    '<td><strong>State</strong></td>' +
-    '<td><strong>Email</strong></td>' +
-    '<td><strong>Experience</strong></td>' +
-    '<td><strong>Price</strong></td>' +
-    '<td><strong>Website</strong></td>' +
-    '</tr>' +
-    '</thead>' +
-    '<tbody>';
-    for(var i = 0; i < data.length; i++) {
+      '<td><strong>Picture</strong></td>' +
+      '<td><strong>Username</strong></td>' +
+      '<td><strong>City</strong></td>' +
+      '<td><strong>State</strong></td>' +
+      '<td><strong>Email</strong></td>' +
+      '<td><strong>Experience</strong></td>' +
+      '<td><strong>Price</strong></td>' +
+      '<td><strong>Website</strong></td>' +
+      '</tr>' +
+      '</thead>' +
+      '<tbody>';
+    for (var i = 0; i < data.length; i++) {
       htmlRes += '<tr>'
       htmlRes += '<td> <img class="circle responsive-img" style="height: 50px; width: 50px;" alt="business_img" src="' + data[i].picture + '"</img></td>';
       htmlRes += '<td>' + data[i].username + '</td>';
