@@ -47,11 +47,21 @@ No Installation is required.
 
 
 ## Usage
-
+1. Visit the [webpage](https://project-2-smu.herokuapp.com)
+2. Take click whether you are looking for a photographer or are a photographer
+3. If you are a photographer, register and take the survey
+4. If you are a client, take the survey
+5. Submit your survey
+6. If you are a photographer, your information will be updated in the database
+7. If you are a client, your results will be loaded
 
 ### Screenshots
-1. Webpage
-![product-gif][product-gif]
+1. Home  
+![home-img][home]  
+2. Survey  
+![client-survey-img][client-survey]  
+3. Results  
+![results-img][results]  
 
 
 ## Team
@@ -59,11 +69,15 @@ No Installation is required.
 **Hunter Nix** - [LinkedIn](https://www.linkedin.com/in/hunternix/) - [GitHub](https://github.com/huntercnix)  
 **Michael Dennison** - [LinkedIn](https://linkedin.com/in/michaeltdennison) - [GitHub](https://github.com/michaeltdennison)    
 
-**Project Link** - [https://github.com/miketdennison/findtographer](https://github.com/miketdennison/findtographer)
+**Project Link** - [https://github.com/miketdennison/findtographer](https://github.com/miketdennison/findtographer)  
+
+**Project Website** - [https://project-2-smu.herokuapp.com](https://project-2-smu.herokuapp.com)
 
 
 ## Acknowledgements
 * [heroku](https://www.heroku.com/)
 
 <!-- IMAGES -->
-[product-gif]: ./readme-imgs/product.gif
+[client-survey]: ./readme-imgs/client-survey.png
+[home]: ./readme-imgs/home.png
+[results]: ./readme-imgs/results.png
