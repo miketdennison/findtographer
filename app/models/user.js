@@ -18,7 +18,6 @@ module.exports = function (sequelize, Sequelize) {
         username: {
             type: Sequelize.TEXT
         },
-
         email: {
             type: Sequelize.STRING,
             validate: {
@@ -55,6 +54,15 @@ module.exports = function (sequelize, Sequelize) {
             },
             allowNull: true
         },
+        website: {
+            type: Sequelize.STRING,
+            allowNull: true
+        },
+        picture: {
+            type: Sequelize.STRING,
+            allowNull: true
+        },
+
         last_login: {
             type: Sequelize.DATE
         },

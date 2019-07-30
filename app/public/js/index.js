@@ -153,23 +153,27 @@ function getResults(userSearch) {
       '<table class = "highlight">' +
       '<thead>' +
       '<tr>' +
+    '<td><strong>Picture</strong></td>' +
     '<td><strong>Username</strong></td>' +
     '<td><strong>City</strong></td>' +
     '<td><strong>State</strong></td>' +
     '<td><strong>Email</strong></td>' +
     '<td><strong>Experience</strong></td>' +
     '<td><strong>Price</strong></td>' +
+    '<td><strong>Website</strong></td>' +
     '</tr>' +
     '</thead>' +
     '<tbody>';
     for(var i = 0; i < data.length; i++) {
       htmlRes += '<tr>'
+      htmlRes += '<td> <img class="circle responsive-img" style="height: 50px; width: 50px;" alt="business_img" src="' + data[i].picture + '"</img></td>';
       htmlRes += '<td>' + data[i].username + '</td>';
       htmlRes += '<td>' + data[i].city + '</td>';
       htmlRes += '<td>' + data[i].state + '</td>';
       htmlRes += '<td>' + data[i].email + '</td>';
       htmlRes += '<td>' + data[i].experience + '+ years' + '</td>';
-      htmlRes += '<td>' + '$'.repeat(data[i].price) + '</td></tr>';
+      htmlRes += '<td>' + '$'.repeat(data[i].price) + '</td>';
+      htmlRes += '<td> <a target="_blank" href=https://' + data[i].website + '>Website</a></td></tr>';
       console.log(data[i]);
     }
     htmlRes += "</tbody>";

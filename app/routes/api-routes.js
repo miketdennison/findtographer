@@ -12,7 +12,9 @@ module.exports = function (app) {
             state: req.body.state,
             travel: req.body.travel,
             experience: req.body.experience,
-            price: req.body.price
+            price: req.body.price,
+            website: req.body.website,
+            picture: req.body.picture
         }, {
             where: {
                 email: req.body.email
