@@ -20,23 +20,16 @@ module.exports = function (app) {
                 email: req.body.email
             }
         }).then(function (dbUser) {
-            //res.json(dbUser);
             console.log(dbUser);
 
         })
     })
 
     app.post("/api/results", function (req, res) {
-        console.log("-----------------------")
-        console.log(req.body);
-        console.log("-----------------------")
-        // res.render("all-results", {
-        //     results: firstname
-        // })
         db.User.findAll({
             price: {
                 [Sequelize.Op.lte]: req.body.price
-                
+
             },
             experience: {
                 [Sequelize.Op.gte]: req.body.experience
@@ -52,21 +45,14 @@ module.exports = function (app) {
                 }
             }, ]
         }).then(function (dbUser) {
-            // res.json(dbUser)
-            // console.log(dbUser)
             res.json(dbUser);
         })
     });
 
     app.get("/results", function (req, res) {
-        // res.render("all-results", {
-        //     results: firstname
-        // })
         db.User.findAll({
 
         }).then(function (dbUser) {
-            // res.json(dbUser)
-            // console.log(dbUser)
             res.render("results", {
                 results: dbUser
             })

@@ -9,7 +9,7 @@ module.exports = function (app, passport) {
         failureRedirect: "/signup",
         failureFlash: true,
         successFlash: true
-        
+
     }));
     // Verifies user is logged in
     app.get("/dashboard", isLoggedIn, authController.dashboard);
