@@ -69,7 +69,7 @@ No Installation is required.
 **Hunter Nix** - [LinkedIn](https://www.linkedin.com/in/hunternix/) - [GitHub](https://github.com/huntercnix)  
 **Michael Dennison** - [LinkedIn](https://linkedin.com/in/michaeltdennison) - [GitHub](https://github.com/michaeltdennison)    
 
-**Project Link** - [https://github.com/miketdennison/findtographey](https://github.com/miketdennison/findtography)  
+**Project Link** - [https://github.com/miketdennison/findtography](https://github.com/miketdennison/findtography)  
 
 **Project Website** - [https://project-2-smu.herokuapp.com](https://project-2-smu.herokuapp.com)
 
