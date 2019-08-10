@@ -1,4 +1,4 @@
-# findtographer
+# findtography
 ## Table of Contents
 
 * [About the Project](#about-the-project)
@@ -12,7 +12,7 @@
 * [Acknowledgements](#acknowledgements)
 
 ## About The Project
-findtographer is a web-based application for matching photographers with clients. The application willmatch based on artist-style, travel preferences, and pricing.
+findtography is a web-based application for matching photographers with clients. The application willmatch based on artist-style, travel preferences, and pricing.
 
 
 ### Built With
